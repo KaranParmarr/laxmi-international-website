@@ -1,0 +1,197 @@
+/* --- Gallery Section --- */
+.gallery-section {
+    padding: 60px 0;
+    background: #f9f9f9;
+    /* Light grey background for the gallery page */
+}
+
+/* Page Titles (in case they aren't in home.css) */
+.gallery-section .section-heading {
+    font-size: 28px;
+    font-weight: bold;
+    color: #222222;
+    margin-bottom: 10px;
+    position: relative;
+    text-align: center;
+}
+
+.gallery-section .section-subtitle {
+    font-size: 18px;
+    color: #555;
+    margin-bottom: 40px;
+    line-height: 1.6;
+    text-align: center;
+}
+
+/* --- Gallery Grid (4 Columns - Default Desktop View) --- */
+/* This is the parent <div> that should wrap all your product-card items */
+.gallery-grid {
+    display: grid;
+    /* 4 columns on desktop */
+    grid-template-columns: repeat(4, 1fr);
+    gap: 25px;
+    width: 90%;
+    max-width: 1200px;
+    /* Max width for the grid */
+    margin: 0 auto;
+}
+
+/* --- Card Styles --- */
+.product-card {
+    width: 100%;
+    background: #fff;
+    border: 1px solid #bcd48b;
+    border-radius: 3px;
+    box-shadow: 0 0 3px rgba(0, 0, 0, 0.05);
+    font-family: Arial, sans-serif;
+    overflow: hidden;
+    transition: all 0.3s ease;
+    display: flex;
+    flex-direction: column;
+}
+
+.product-card:hover {
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
+    transform: translateY(-3px);
+}
+
+/* Product image/video container */
+.product-img {
+    text-align: center;
+    background-color: #fff;
+    border-bottom: 1px solid #eaeaea;
+    height: 200px;
+    position: relative;
+}
+
+.product-img img,
+.product-img video {
+    width: 100%;
+    height: 100%;
+    display: block;
+    object-fit: cover;
+}
+
+/* Product title & text */
+.product-name {
+    padding: 15px;
+    text-align: left;
+    flex-grow: 1;
+}
+
+.product-name .titly {
+    font-size: 17px;
+    font-weight: 700;
+    color: #000;
+    margin-bottom: 8px;
+    text-transform: uppercase;
+    text-decoration: underline;
+    text-decoration-color: #ddd;
+    text-underline-offset: 4px;
+}
+
+.product-name p {
+    font-size: 14px;
+    color: #222;
+    line-height: 1.6;
+}
+
+/* Button container - Centering the button */
+.d-flex {
+    display: flex;
+    justify-content: center;
+    /* Center the button horizontally */
+    width: 100%;
+    border-top: 1px solid #eee;
+    margin-top: auto;
+    padding: 10px 0;
+    /* Add vertical padding */
+    background-color: #f7f7f7;
+    /* Subtle background for button area */
+}
+
+/* Buttons */
+.enq {
+    border: none;
+    padding: 12px 0;
+    font-size: 15px;
+    cursor: pointer;
+    font-weight: 600;
+    transition: 0.2s ease;
+    width: 80%;
+    /* Button takes 80% of the container width */
+    max-width: 250px;
+    border-radius: 5px;
+}
+
+/* Left button - blue (like "Order Now") */
+.bg1 {
+    background-color: #10b7dd;
+    color: #fff;
+    /* Removed border-right as it is now a single, centered button */
+}
+
+.bg1:hover {
+    background-color: #0c8aa0;
+}
+
+/* Hover/Click Effect */
+.enq:active {
+    transform: scale(0.98);
+    /* Subtle scale down on click/tap */
+    opacity: 0.8;
+}
+
+/* Right button - black (like "View More") */
+.bg2 {
+    background-color: #000;
+    color: #fff;
+}
+
+.bg2:hover {
+    background-color: #222;
+}
+
+
+/* --- Tablet View (2 Columns) --- */
+@media (max-width: 1024px) {
+    .gallery-grid {
+        /* 2 columns on tablet */
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+/* --- Mobile Perfect View (1 Column) --- */
+@media (max-width: 600px) {
+    .gallery-grid {
+        /* 1 column on mobile */
+        grid-template-columns: 1fr;
+        gap: 15px;
+        /* Reduce gap on mobile */
+        width: 95%;
+    }
+
+    .gallery-section {
+        padding: 30px 0;
+        /* Reduce section padding */
+    }
+
+    .gallery-section .section-heading {
+        font-size: 22px;
+    }
+
+    .gallery-section .section-subtitle {
+        font-size: 15px;
+        margin-bottom: 25px;
+    }
+
+    .product-name {
+        padding: 12px;
+        /* Slightly reduce padding inside the product info area */
+    }
+
+    .product-img {
+        height: 180px;
+        /* Slightly reduce image height for smaller screens */
+    }
+}

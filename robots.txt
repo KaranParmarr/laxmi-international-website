@@ -1,0 +1,12 @@
+User-agent: *
+Allow: /
+
+# Block unnecessary system folders
+Disallow: /wp-admin/
+Disallow: /cgi-bin/
+
+# Allow internal search pages only if needed
+Disallow: /search?
+
+# Sitemap
+Sitemap: https://laxmiinternational.org.in/sitemap.xml

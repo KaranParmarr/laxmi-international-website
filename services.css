@@ -1,0 +1,1572 @@
+/* ===== GENERAL STYLES ===== */
+body {
+    margin: 0;
+    font-family: "Poppins", sans-serif;
+    background: #f8f8f8;
+    color: #222;
+}
+
+/* ===== PRODUCT SECTION ===== */
+.section {
+    padding: 80px 0;
+    background: #f8fafc;
+    font-family: "Poppins", sans-serif;
+}
+
+/* Product Hero Background */
+.product-hero {
+    background-image: url("/blog/services.jpeg");
+    /* <-- change path */
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+
+    /* Optional overlay for readability */
+    position: relative;
+}
+
+.product-hero::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.45);
+    /* dark overlay */
+    z-index: 1;
+}
+
+.product-hero .container {
+    position: relative;
+    z-index: 2;
+}
+
+/* Hero Text Styling */
+.product-hero h1,
+.product-hero p {
+    color: #fff;
+    /* ensures visibility on all images */
+}
+
+@media (max-width: 767px) {
+    .product-hero {
+        padding: 70px 0;
+        background-position: center top;
+    }
+
+    .product-hero h1 {
+        font-size: 32px;
+        line-height: 1.3;
+    }
+
+    .product-hero p {
+        font-size: 16px;
+        margin-top: 8px;
+    }
+}
+
+.section-title {
+    font-size: 32px;
+    font-weight: 700;
+    text-align: center;
+    margin-bottom: 10px;
+    color: #1b1b1b;
+}
+
+.section-subtitle {
+    text-align: center;
+    color: #555;
+    font-size: 16px;
+    margin-bottom: 35px;
+}
+
+/* ===== TABS ===== */
+.tabs {
+    display: flex;
+    justify-content: center;
+    gap: 12px;
+    margin-bottom: 35px;
+    flex-wrap: wrap;
+}
+
+.tab-btn {
+    padding: 12px 24px;
+    border: none;
+    font-size: 16px;
+    background: #e9ecef;
+    color: #333;
+    font-weight: 600;
+    border-radius: 30px;
+    cursor: pointer;
+    transition: 0.3s ease;
+}
+
+.tab-btn.active,
+.tab-btn:hover {
+    background: #009688;
+    color: #fff;
+}
+
+/* ===== CONTENT ===== */
+.tab-content {
+    display: none;
+    animation: fadeIn .4s ease;
+}
+
+.tab-content.active {
+    display: block;
+}
+
+/* ===== CARD ===== */
+/* Style for UL container */
+/* Grid layout for specifications & features */
+.card ul {
+    list-style: none;
+    padding-left: 0;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    /* 3 columns */
+    gap: 12px 16px;
+    /* row gap, column gap */
+    margin-top: 10px;
+    text-align: left;
+}
+
+/* Each list item styling */
+.card ul li {
+    display: flex;
+    align-items: start;
+    gap: 8px;
+    font-size: 15px;
+    color: #333;
+    line-height: 1.35;
+}
+
+/* Hide existing span tick (to avoid double tick) */
+.card ul li span {
+    display: none;
+}
+
+/* Circle tick bullet */
+.card ul li::before {
+    content: "✓";
+    width: 20px;
+    height: 20px;
+    min-width: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 50%;
+    border: 2px solid #2ecc71;
+    font-size: 12px;
+    font-weight: bold;
+    color: #2ecc71;
+    margin-top: 2px;
+}
+
+/* Hover effect */
+.card ul li:hover::before {
+    background: #2ecc71;
+    color: #fff;
+    transition: 0.3s;
+}
+
+/* Responsive: change to 2 columns on tablets */
+@media(max-width: 768px) {
+    .card ul {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+/* Responsive: single column on mobile */
+@media(max-width: 480px) {
+    .card ul {
+        grid-template-columns: 1fr;
+    }
+}
+
+/* Fade Animation */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(10px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* ===== RESPONSIVE ===== */
+@media(max-width: 768px) {
+    .section-title {
+        font-size: 26px;
+    }
+
+    .card {
+        padding: 25px;
+    }
+
+    .tab-btn {
+        padding: 10px 18px;
+        font-size: 14px;
+    }
+}
+
+/* ===== PRODUCT FORMS GRID ===== */
+/* Section Heading Style */
+.section-title {
+    font-size: 32px;
+    font-weight: 700;
+    color: #0b1f3a;
+    /* Dark blue/black tone like example */
+    text-align: center;
+}
+
+.section-subtitle {
+    font-size: 18px;
+    color: #6f7a87;
+    /* Soft gray color */
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+/* Card Styling */
+.card {
+    background: #fff;
+    padding: 25px;
+    border-radius: 12px;
+    box-shadow: 0 3px 12px rgba(0, 0, 0, 0.07);
+    transition: 0.3s ease;
+}
+
+.card:hover {
+    transform: translateY(-4px);
+}
+
+/* Images inside card */
+.card img {
+    width: 100%;
+    border-radius: 12px 12px 0 0;
+    margin-bottom: 15px;
+}
+
+/* Product Title */
+.card h3 {
+    font-size: 22px;
+    font-weight: 700;
+    color: #0b1f3a;
+    margin-bottom: 8px;
+}
+
+/* Applications heading */
+.card h2 {
+    font-size: 18px;
+    font-weight: 600;
+    color: #0b1f3a;
+    margin-top: 15px;
+}
+
+/* Make li look like Pills/Tags */
+.card li {
+    list-style: none;
+    background: #f2f6ff;
+    padding: 6px 12px;
+    margin: 6px 0;
+    display: inline-block;
+    border-radius: 30px;
+    font-size: 14px;
+    color: #0b1f3a;
+    border: 1px solid #dbe3ff;
+    transition: 0.3s ease;
+    cursor: pointer;
+}
+
+/* Hover Effect on Application Pills */
+.card li:hover {
+    background: #3159d2;
+    /* Blue shade like image */
+    color: #fff;
+    border-color: #3159d2;
+    transform: scale(1.05);
+}
+
+.grid-3 {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 25px;
+}
+
+/* ===== PACKAGING BOX ===== */
+.package-box {
+    background: #fff;
+    padding: 25px;
+    text-align: center;
+    font-size: 22px;
+    font-weight: 700;
+    border-radius: 10px;
+    border: 2px solid #0a66c2;
+    transition: 0.3s;
+}
+
+.package-box span {
+    display: block;
+    margin-top: 8px;
+    font-size: 14px;
+    font-weight: normal;
+    color: #555;
+}
+
+.package-box:hover {
+    background: #0a66c2;
+    color: #fff;
+}
+
+/* ===== BACKGROUND SECTION ===== */
+.bg-light {
+    background: #eef6ff;
+}
+
+/* Footer Style */
+.footer-section {
+    background: linear-gradient(to right, #0d0d0d, #1c1c1c);
+    color: #f2f2f2;
+    padding: 40px 10%;
+    font-family: Arial, sans-serif;
+}
+
+.footer-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 40px;
+}
+
+/* Logo Box */
+.footer-logo {
+    display: flex;
+    align-items: left 100px;
+    gap: 10px;
+    margin-bottom: 15px;
+}
+
+.footer-logo img {
+    width: 240px;
+    height: auto;
+}
+
+@media (max-width: 768px) {
+    .footer-logo img {
+        width: 120px;
+    }
+}
+
+@media (max-width: 480px) {
+    .footer-logo img {
+        width: 90px;
+    }
+}
+
+.logo-box {
+    width: 45px;
+    height: 45px;
+    background: linear-gradient(to bottom, #ffce45, #e0a800);
+    color: #000;
+    font-weight: bold;
+    font-size: 20px;
+    border-radius: 8px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.company-name {
+    font-size: 18px;
+    font-weight: bold;
+}
+
+.footer-text {
+    font-size: 16px;
+    color: rgba(220, 220, 220, 0.8);
+    line-height: 1.6;
+}
+
+/* Links */
+.footer-title {
+    font-size: 18px;
+    font-weight: 600;
+    margin-bottom: 12px;
+}
+
+.footer-links li {
+    list-style: none;
+    margin-bottom: 6px;
+}
+
+.footer-links a {
+    text-decoration: none;
+    font-size: 14px;
+    color: rgba(220, 220, 220, 0.8);
+    transition: 0.3s;
+}
+
+.footer-links a:hover {
+    color: #ffce45;
+}
+
+/* Contact Info */
+.footer-contact {
+    list-style: none;
+}
+
+.footer-contact li {
+    margin-bottom: 8px;
+    font-size: 14px;
+    color: rgba(220, 220, 220, 0.8);
+}
+
+.footer-contact a {
+    color: rgba(220, 220, 220, 0.9);
+    transition: 0.3s;
+}
+
+.footer-contact a:hover {
+    color: #ffce45;
+}
+
+/* Bottom Bar */
+.footer-bottom {
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+    text-align: center;
+    padding: 15px 0;
+    margin-top: 30px;
+    font-size: 14px;
+    color: rgba(220, 220, 220, 0.6);
+}
+
+/* ----------- ANIMATIONS ----------- */
+@keyframes fadeUp {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes zoomIn {
+    from {
+        opacity: 0;
+        transform: scale(0.85);
+    }
+
+    to {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+
+/* -------- RESPONSIVE DESIGN -------- */
+
+/* Tablets */
+@media(max-width: 900px) {
+
+    .hero-grid,
+    .about-grid {
+        grid-template-columns: 1fr;
+        text-align: center;
+    }
+
+    .hero-img img {
+        max-width: 90%;
+        margin: auto;
+        display: block;
+    }
+
+    .grid-4,
+    .app-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .navbar nav a {
+        margin-left: 10px;
+    }
+}
+
+/* Mobile */
+@media(max-width: 600px) {
+    .hero h1 {
+        font-size: 34px;
+    }
+
+    .btn-group {
+        flex-direction: column;
+    }
+
+    .grid-4,
+    .app-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .navbar .container {
+        flex-direction: column;
+    }
+
+    .navbar nav {
+        margin-top: 10px;
+    }
+}
+
+.social-icons {
+    display: flex;
+    gap: 18px;
+    align-items: center;
+    margin: 25px 0;
+}
+
+.social-icons a {
+    font-size: 34px;
+    transition: 0.3s;
+}
+
+.social-icons a:hover {
+    transform: scale(1.2);
+}
+
+/* Official Brand Colors */
+.fb {
+    color: #1877F2;
+}
+
+.linkedin {
+    color: #0A66C2;
+}
+
+.whatsapp {
+    color: #25D366;
+}
+
+.email {
+    color: #EA4335;
+}
+
+.whatsapp-float {
+    position: fixed;
+    bottom: 25px;
+    left: 25px;
+    background: #25D366;
+    color: #fff;
+    border-radius: 50px;
+    padding: 12px 18px;
+    font-size: 18px;
+    font-weight: 600;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    text-decoration: none;
+    z-index: 999;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+    transition: all 0.3s ease;
+}
+
+.whatsapp-float i {
+    font-size: 24px;
+}
+
+.whatsapp-float:hover {
+    background: #1EBE55;
+    transform: scale(1.05);
+}
+
+/* Responsive: header image */
+/* Center text inside page title */
+#page-title .title-center {
+    text-align: center;
+}
+
+/* Make H1 centered and responsive */
+#page-title h1 {
+    font-size: 48px;
+    font-weight: 700;
+    text-align: center;
+    color: #fff;
+}
+
+/* Mobile Fixes – Android + iPhone */
+@media (max-width: 767px) {
+    #page-title {
+        padding: 100px 20px !important;
+        background-position: center top !important;
+    }
+
+    #page-title h1 {
+        font-size: 32px;
+        line-height: 1.3;
+    }
+}
+
+/* iPhone-specific enhancement */
+@media only screen and (min-device-width: 320px) and (max-device-width: 480px) {
+
+    #page-title {
+        background-position: center center !important;
+        padding: 100px 10px !important;
+    }
+
+    #page-title h1 {
+        font-size: 30px;
+    }
+}
+
+/* Terms sections */
+/* ------------------------------------
+   THEME VARIABLES
+------------------------------------ */
+:root {
+    --primary: #0b3c5d;
+    --secondary: #c9a24d;
+    --foreground: #1e1e1e;
+    --muted-foreground: #6b7280;
+    --background: #ffffff;
+    --muted: #f6f8fb;
+    --card: #ffffff;
+    --border: #e5e7eb;
+    --radius-xl: 14px;
+    --radius-2xl: 20px;
+    --shadow-hover: 0 18px 40px rgba(0, 0, 0, 0.12);
+}
+
+/* ------------------------------------
+   RESET
+------------------------------------ */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: "Segoe UI", Arial, sans-serif;
+    background-color: var(--background);
+    color: var(--foreground);
+    line-height: 1.7;
+}
+
+/* ------------------------------------
+   SPACING UTILITIES
+------------------------------------ */
+.py-24 {
+    padding: 120px 0;
+}
+
+.mt-12 {
+    margin-top: 48px;
+}
+
+.mb-16 {
+    margin-bottom: 64px;
+}
+
+.mb-6 {
+    margin-bottom: 24px;
+}
+
+.mb-4 {
+    margin-bottom: 16px;
+}
+
+.mb-2 {
+    margin-bottom: 8px;
+}
+
+.p-6 {
+    padding: 24px;
+}
+
+.px-4 {
+    padding-left: 16px;
+    padding-right: 16px;
+}
+
+.px-6 {
+    padding-left: 24px;
+    padding-right: 24px;
+}
+
+.px-8 {
+    padding-left: 32px;
+    padding-right: 32px;
+}
+
+/* ------------------------------------
+   COLORS & TEXT
+------------------------------------ */
+.bg-background {
+    background-color: var(--background);
+}
+
+.bg-card {
+    background-color: var(--card);
+}
+
+.bg-muted {
+    background-color: var(--muted);
+}
+
+.bg-secondary\/10 {
+    background-color: rgba(201, 162, 77, 0.12);
+}
+
+.text-foreground {
+    color: var(--foreground);
+}
+
+.text-muted-foreground {
+    color: var(--muted-foreground);
+}
+
+.text-secondary {
+    color: var(--secondary);
+}
+
+.text-primary {
+    color: var(--primary);
+}
+
+/* ------------------------------------
+   CONTAINER
+------------------------------------ */
+.container {
+    max-width: 1200px;
+    margin: auto;
+}
+
+/* ------------------------------------
+   GRID SYSTEM
+------------------------------------ */
+.grid {
+    display: grid;
+}
+
+.gap-6 {
+    gap: 24px;
+}
+
+.sm\:grid-cols-2 {
+    grid-template-columns: repeat(2, 1fr);
+}
+
+.lg\:grid-cols-4 {
+    grid-template-columns: repeat(4, 1fr);
+}
+
+/* ------------------------------------
+   TYPOGRAPHY
+------------------------------------ */
+.font-display {
+    font-family: "Segoe UI Semibold", "Segoe UI", Arial, sans-serif;
+}
+
+.font-body {
+    font-family: "Segoe UI", Arial, sans-serif;
+}
+
+.font-bold {
+    font-weight: 700;
+}
+
+.font-semibold {
+    font-weight: 600;
+}
+
+.text-sm {
+    font-size: 14px;
+}
+
+.text-lg {
+    font-size: 18px;
+}
+
+.text-2xl {
+    font-size: 26px;
+}
+
+.text-3xl {
+    font-size: 32px;
+}
+
+.text-4xl {
+    font-size: 40px;
+}
+
+.text-5xl {
+    font-size: 48px;
+}
+
+.leading-relaxed {
+    line-height: 1.75;
+}
+
+/* ------------------------------------
+   BADGE
+------------------------------------ */
+.inline-block {
+    display: inline-block;
+}
+
+.rounded-full {
+    border-radius: 999px;
+}
+
+/* ------------------------------------
+   CARD STYLING
+------------------------------------ */
+.rounded-2xl {
+    border-radius: var(--radius-2xl);
+}
+
+.border {
+    border: 1px solid var(--border);
+}
+
+.group {
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.group:hover {
+    transform: translateY(-8px);
+}
+
+.group:hover {
+    box-shadow: var(--shadow-hover);
+}
+
+.hover\:border-secondary\/50:hover {
+    border-color: rgba(201, 162, 77, 0.5);
+}
+
+/* ------------------------------------
+   ICON BOX
+------------------------------------ */
+.w-12 {
+    width: 48px;
+}
+
+.h-12 {
+    height: 48px;
+}
+
+.rounded-xl {
+    border-radius: var(--radius-xl);
+}
+
+.flex {
+    display: flex;
+}
+
+.items-center {
+    align-items: center;
+}
+
+.justify-center {
+    justify-content: center;
+}
+
+/* ------------------------------------
+   LINKS
+------------------------------------ */
+a {
+    text-decoration: none;
+}
+
+a.text-primary:hover {
+    color: var(--secondary);
+}
+
+/* ------------------------------------
+   ANIMATIONS
+------------------------------------ */
+.opacity-0 {
+    opacity: 0;
+}
+
+.animate-fade-up {
+    animation: fadeUp 0.9s ease forwards;
+}
+
+@keyframes fadeUp {
+    from {
+        opacity: 0;
+        transform: translateY(25px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* ------------------------------------
+   TEXT ALIGNMENT
+------------------------------------ */
+.text-center {
+    text-align: center;
+}
+
+.max-w-3xl {
+    max-width: 768px;
+}
+
+.mx-auto {
+    margin-left: auto;
+    margin-right: auto;
+}
+
+/* ------------------------------------
+   RESPONSIVE (ANDROID & IPHONE)
+------------------------------------ */
+@media (max-width: 1024px) {
+    .lg\:grid-cols-4 {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .text-5xl {
+        font-size: 38px;
+    }
+}
+
+@media (max-width: 640px) {
+    .py-24 {
+        padding: 80px 0;
+    }
+
+    .sm\:grid-cols-2 {
+        grid-template-columns: 1fr;
+    }
+
+    .text-5xl {
+        font-size: 32px;
+    }
+
+    .text-4xl {
+        font-size: 28px;
+    }
+
+    .text-3xl {
+        font-size: 26px;
+    }
+
+    .p-6 {
+        padding: 22px;
+    }
+}
+
+/* =========================================
+   FORCE TERMS GRID LAYOUT
+   Desktop: 4 columns
+   Mobile: 2 columns × 2 rows
+========================================= */
+
+/* Base grid */
+#terms .grid {
+    display: grid;
+    gap: 24px;
+}
+
+/* Desktop & Laptop (4 in one row) */
+@media (min-width: 1025px) {
+    #terms .grid {
+        grid-template-columns: repeat(4, 1fr);
+    }
+}
+
+/* Tablet + Mobile (Android & iPhone) → 2 x 2 */
+@media (max-width: 1024px) {
+    #terms .grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+/* Small Phones (iPhone SE, Android small) */
+@media (max-width: 480px) {
+    #terms .grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 16px;
+    }
+
+    #terms .p-6 {
+        padding: 20px;
+    }
+
+    #terms .text-2xl {
+        font-size: 22px;
+    }
+
+    #terms .text-lg {
+        font-size: 15px;
+    }
+
+    #terms .text-sm {
+        font-size: 13.5px;
+    }
+}
+
+/* core services  */
+/* ----------------------------------
+   THEME VARIABLES
+---------------------------------- */
+:root {
+    --primary: #0b3c5d;
+    --foreground: #1e1e1e;
+    --muted-foreground: #6b7280;
+    --background: #ffffff;
+}
+
+/* ----------------------------------
+   RESET
+---------------------------------- */
+
+/* ----------------------------------
+   SECTION SPACING
+---------------------------------- */
+.py-20 {
+    padding: 100px 0;
+}
+
+/* ----------------------------------
+   CONTAINER
+---------------------------------- */
+.container {
+    max-width: 1200px;
+    margin: auto;
+}
+
+.px-4 {
+    padding-left: 16px;
+    padding-right: 16px;
+}
+
+/* ----------------------------------
+   TEXT & TYPOGRAPHY
+---------------------------------- */
+.text-center {
+    text-align: center;
+}
+
+.font-display {
+    font-family: "Segoe UI Semibold", "Segoe UI", Arial, sans-serif;
+}
+
+.font-bold {
+    font-weight: 700;
+}
+
+.font-semibold {
+    font-weight: 600;
+}
+
+.text-foreground {
+    color: var(--foreground);
+}
+
+.text-muted-foreground {
+    color: var(--muted-foreground);
+}
+
+.text-xl {
+    font-size: 20px;
+}
+
+.text-3xl {
+    font-size: 32px;
+}
+
+.text-4xl {
+    font-size: 40px;
+}
+
+.mb-2 {
+    margin-bottom: 8px;
+}
+
+.mb-4 {
+    margin-bottom: 16px;
+}
+
+.mb-16 {
+    margin-bottom: 64px;
+}
+
+/* ----------------------------------
+   GRID LAYOUT
+---------------------------------- */
+.grid {
+    display: grid;
+}
+
+.gap-8 {
+    gap: 32px;
+}
+
+.max-w-5xl {
+    max-width: 960px;
+    margin: auto;
+}
+
+/* Desktop: 3 columns */
+@media (min-width: 768px) {
+    .md\:grid-cols-3 {
+        grid-template-columns: repeat(3, 1fr);
+    }
+}
+
+/* Mobile: stacked */
+@media (max-width: 767px) {
+    .md\:grid-cols-3 {
+        grid-template-columns: 1fr;
+    }
+}
+
+/* ----------------------------------
+   VALUE CARDS
+---------------------------------- */
+.p-6 {
+    padding: 24px;
+}
+
+/* ----------------------------------
+   ICON CIRCLE
+---------------------------------- */
+.w-16 {
+    width: 64px;
+}
+
+.h-16 {
+    height: 64px;
+}
+
+.rounded-full {
+    border-radius: 999px;
+}
+
+.bg-primary\/10 {
+    background-color: rgba(11, 60, 93, 0.1);
+}
+
+.flex {
+    display: flex;
+}
+
+.items-center {
+    align-items: center;
+}
+
+.justify-center {
+    justify-content: center;
+}
+
+.mx-auto {
+    margin-left: auto;
+    margin-right: auto;
+}
+
+/* ----------------------------------
+   SVG ICONS
+---------------------------------- */
+svg {
+    stroke: currentColor;
+}
+
+.text-primary {
+    color: var(--primary);
+}
+
+/* ----------------------------------
+   RESPONSIVE (ANDROID & IPHONE)
+---------------------------------- */
+@media (max-width: 600px) {
+    .py-20 {
+        padding: 70px 0;
+    }
+
+    .text-4xl {
+        font-size: 30px;
+    }
+
+    .text-3xl {
+        font-size: 26px;
+    }
+
+    .p-6 {
+        padding: 20px;
+    }
+
+    .w-16,
+    .h-16 {
+        width: 56px;
+        height: 56px;
+    }
+}
+
+/* Services  6 section */
+/* ================================
+   HEADER + SECTION 1 SAME COLOR
+================================ */
+#services,
+.Global-one {
+    background: #f7f9fc;
+}
+
+/* ================================
+   DIFFERENT BACKGROUND PER SECTION
+================================ */
+.Global-two {
+    background: #ffffff;
+}
+
+.Global-three {
+    background: #f2f6fb;
+}
+
+.Global-four {
+    background: #ffffff;
+}
+
+.Global-five {
+    background: #f8fafc;
+}
+
+
+
+/* ================================
+   GLOBAL SECTION BASE
+================================ */
+.Global {
+    padding: 90px 0;
+    overflow: hidden;
+}
+
+.Global-inner {
+    max-width: 1200px;
+    margin: auto;
+    padding: 0 20px;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    align-items: center;
+    gap: 60px;
+}
+
+/* ================================
+   TEXT STYLING
+================================ */
+.Global-text h3 {
+    font-size: 32px;
+    font-weight: 700;
+    margin-bottom: 16px;
+    color: #0b3c5d;
+}
+
+.Global-text p {
+    font-size: 16px;
+    line-height: 1.7;
+    color: #4b5563;
+}
+
+/* ================================
+   IMAGE STYLING + HOVER / CLICK
+================================ */
+.Global-image img {
+    width: 100%;
+    max-width: 460px;
+    border-radius: 18px;
+    cursor: pointer;
+    transition:
+        transform 0.6s ease,
+        box-shadow 0.6s ease;
+}
+
+/* Hover: zoom + lift */
+.Global-image img:hover {
+    transform: translateY(-10px) scale(1.05);
+    box-shadow: 0 30px 60px rgba(0, 0, 0, 0.18);
+}
+
+/* Click (active): press effect */
+.Global-image img:active {
+    transform: scale(0.98);
+}
+
+/* ================================
+   SCROLL ANIMATIONS
+================================ */
+@keyframes fadeUp {
+    from {
+        opacity: 0;
+        transform: translateY(60px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes slideLeft {
+    from {
+        opacity: 0;
+        transform: translateX(80px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+@keyframes slideRight {
+    from {
+        opacity: 0;
+        transform: translateX(-80px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+/* Default animation */
+.Global {
+    opacity: 0;
+    animation: fadeUp 1s ease forwards;
+}
+
+/* Direction-based animation */
+.Global-right .Global-text {
+    animation: slideRight 1.1s ease forwards;
+}
+
+.Global-left .Global-text {
+    animation: slideLeft 1.1s ease forwards;
+}
+
+/* ================================
+   MOBILE (ANDROID & IPHONE)
+================================ */
+@media (max-width: 768px) {
+    .Global-inner {
+        grid-template-columns: 1fr;
+        gap: 30px;
+        text-align: center;
+    }
+
+    .Global-text h3 {
+        font-size: 26px;
+    }
+
+    .Global-image img {
+        max-width: 100%;
+        margin: auto;
+    }
+
+    /* Stack image first always on mobile */
+    .Global-left,
+    .Global-right {
+        display: flex;
+        flex-direction: column;
+    }
+}
+
+/* icon section */
+/* ===============================
+   ICON BASE STYLE
+================================ */
+.Global-icon {
+    width: 32px;
+    height: 32px;
+    stroke-width: 1.6;
+    transition:
+        transform 0.35s ease,
+        color 0.35s ease,
+        filter 0.35s ease;
+    will-change: transform;
+}
+
+/* Heading alignment */
+.Global-heading {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+    margin-bottom: 14px;
+}
+
+/* ===============================
+   HOVER + TAP MICRO-ANIMATION
+================================ */
+.Global-text:hover .Global-icon,
+.Global-text:active .Global-icon {
+    transform: translateY(-4px) rotate(-6deg) scale(1.08);
+    filter: drop-shadow(0 8px 16px rgba(0, 0, 0, 0.25));
+}
+
+/* Slight reverse motion for right-side sections */
+.Global-right .Global-text:hover .Global-icon {
+    transform: translateY(-4px) rotate(6deg) scale(1.08);
+}
+
+/* ===============================
+   SECTION-WISE ICON COLORS
+================================ */
+
+/* Section 1 – Quality Assurance (Gold) */
+.Global-one .Global-icon {
+    color: #c9a24d;
+}
+
+/* Section 2 – Packaging (Blue) */
+.Global-two .Global-icon {
+    color: #2563eb;
+}
+
+/* Section 3 – Delivery (Green) */
+.Global-three .Global-icon {
+    color: #16a34a;
+}
+
+/* Section 4 – Technical Support (Purple) */
+.Global-four .Global-icon {
+    color: #7c3aed;
+}
+
+/* Section 5 – Logistics (Orange) */
+.Global-five .Global-icon {
+    color: #ea580c;
+}
+
+/* Section 6 – Custom Services (Teal) */
+.Global-six .Global-icon {
+    color: #0d9488;
+}
+
+/* ===============================
+   MOBILE OPTIMIZATION
+================================ */
+@media (max-width: 768px) {
+    .Global-icon {
+        width: 28px;
+        height: 28px;
+    }
+
+    /* Mobile tap animation */
+    .Global-text:active .Global-icon {
+        transform: translateY(-3px) scale(1.05);
+    }
+}
+
+/* ICON + HEADING */
+.Global-heading {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+    margin-bottom: 12px;
+}
+
+.Global-icon {
+    width: 30px;
+    height: 30px;
+    stroke-width: 1.6;
+    transition: transform 0.4s ease, filter 0.4s ease;
+}
+
+/* HALO */
+.Global-icon-wrap {
+    position: relative;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.Global-icon-wrap::before {
+    content: "";
+    position: absolute;
+    width: 56px;
+    height: 56px;
+    border-radius: 50%;
+    background: currentColor;
+    opacity: 0.15;
+    filter: blur(14px);
+    transform: scale(0.6);
+    transition: all 0.5s ease;
+    z-index: -1;
+}
+
+/* SECTION COLORS */
+.Global-one .Global-icon {
+    color: #c9a24d;
+}
+
+.Global-two .Global-icon {
+    color: #2563eb;
+}
+
+.Global-three .Global-icon {
+    color: #16a34a;
+}
+
+/* PULSE ANIMATION */
+@keyframes iconPulse {
+    0% {
+        transform: scale(1);
+    }
+
+    50% {
+        transform: scale(1.15);
+    }
+
+    100% {
+        transform: scale(1);
+    }
+}
+
+.Global.in-view .Global-icon {
+    animation: iconPulse 0.9s ease-out;
+}
+
+.Global.in-view .Global-icon-wrap::before {
+    transform: scale(1);
+}
+
+/* MOBILE */
+@media (max-width: 768px) {
+    .Global-icon {
+        width: 26px;
+        height: 26px;
+    }
+
+    .Global-icon-wrap::before {
+        width: 46px;
+        height: 46px;
+    }
+}
+
+.delivery-icon {
+    color: #51ee0e;
+    /* icon color */
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+}
+
+/* Example variations */
+.delivery-icon.gold {
+    color: #c9a24d;
+}
+
+.delivery-icon.blue {
+    color: #2563eb;
+}
+
+.delivery-icon.green {
+    color: #16a34a;
+}
