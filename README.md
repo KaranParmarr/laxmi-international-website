@@ -1,7 +1,7 @@
 # Laxmi International - Activated Carbon
 
 ## Overview
-This website represents **Laxmi International**, a leading provider of high-quality activated carbon products. It showcases the company's products, services, and applications while providing essential information for potential clients and partners.
+This website represents **Laxmi International**, a leading provider of high-quality activated carbon products. It showcases the company's products, services, and applications while providing essential information for potential clients and partners.<br>
 visit website:- https://laxmiinternational.org.in/
 
 ## Features
