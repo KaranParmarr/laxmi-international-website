@@ -1,0 +1,776 @@
+/* ===== PRODUCT SECTION ===== */
+.section {
+    padding: 80px 0;
+    background: #f8fafc;
+    font-family: "Poppins", sans-serif;
+}
+
+/* =====================================================
+   BASE
+===================================================== */
+#services {
+    background: #ffffff;
+}
+
+/* =====================================================
+   GLOBAL SECTION
+===================================================== */
+.Global {
+    padding: 90px 8%;
+    animation: fadeUp 1s ease both;
+    animation-timeline: view();
+    animation-range: entry 0% cover 30%;
+}
+
+@keyframes fadeUp {
+    from {
+        opacity: 0;
+        transform: translateY(60px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* =====================================================
+   INNER LAYOUT
+===================================================== */
+.Global-inner {
+    display: flex;
+    align-items: center;
+    gap: 60px;
+}
+
+/* IMAGE ALIGNMENT RULES */
+.Global-right .Global-image {
+    justify-content: flex-end;
+}
+
+.Global-left .Global-image {
+    justify-content: flex-start;
+}
+
+/* =====================================================
+   TEXT
+===================================================== */
+.Global-text {
+    flex: 1;
+}
+
+.Global-heading {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+    margin-bottom: 16px;
+}
+
+.Global-text h3 {
+    font-size: 26px;
+    font-weight: 700;
+    letter-spacing: 0.4px;
+}
+
+.Global-text p {
+    font-size: 16px;
+    color: #374151;
+    line-height: 1.75;
+    margin-bottom: 14px;
+}
+
+/* =====================================================
+   ICONS
+===================================================== */
+.Global-icon,
+.delivery-icon svg {
+    width: 46px;
+    height: 46px;
+    stroke-width: 1.8;
+    transition: transform 0.35s ease, color 0.35s ease;
+}
+
+/* Icon hover effect */
+.Global-heading:hover .Global-icon,
+.Global-heading:hover .delivery-icon svg {
+    transform: scale(1.15) rotate(6deg);
+}
+
+/* =====================================================
+   IMAGE
+===================================================== */
+.Global-image {
+    flex: 1;
+    display: flex;
+}
+
+.Global-image img {
+    width: 100%;
+    max-width: 420px;
+    padding: 6px;
+    border-radius: 16px;
+    background: #ffffff;
+    border: 4px solid #d1d5db;
+    transition:
+        transform 0.45s ease,
+        box-shadow 0.45s ease,
+        border-image 0.45s ease;
+}
+
+/* Hover scale + glow */
+.Global-image img:hover {
+    transform: scale(1.06);
+    box-shadow:
+        0 20px 45px rgba(0, 0, 0, 0.2),
+        0 0 40px rgba(99, 102, 241, 0.5);
+}
+
+/* 7-Color animated border */
+.Global-image img:hover {
+    border-image: linear-gradient(45deg,
+            #ff0000,
+            #ff9800,
+            #ffeb3b,
+            #4caf50,
+            #00bcd4,
+            #3f51b5,
+            #9c27b0) 1;
+}
+
+/* =====================================================
+   SECTION COLORS + HEADING / ICON COLORS
+===================================================== */
+.Global-one {
+    background: #eef6ff;
+}
+
+.Global-one h3,
+.Global-one .Global-icon {
+    color: #1d4ed8;
+}
+
+.Global-two {
+    background: #fff7ed;
+}
+
+.Global-two h3,
+.Global-two .Global-icon {
+    color: #c2410c;
+}
+
+.Global-three {
+    background: #ecfdf5;
+}
+
+.Global-three h3,
+.Global-three .delivery-icon svg {
+    color: #047857;
+}
+
+.Global-four {
+    background: #fdf4ff;
+}
+
+.Global-four h3,
+.Global-four .Global-icon {
+    color: #7e22ce;
+}
+
+.Global-five {
+    background: #fef2f2;
+}
+
+.Global-five h3,
+.Global-five .Global-icon {
+    color: #b91c1c;
+}
+
+.Global-six {
+    background: #f0f9ff;
+}
+
+.Global-six h3,
+.Global-six .Global-icon {
+    color: #0369a1;
+}
+
+/* =====================================================
+   RESPONSIVE – TABLET
+===================================================== */
+@media (max-width: 992px) {
+    .Global {
+        padding: 70px 6%;
+    }
+
+    .Global-inner {
+        gap: 40px;
+    }
+
+    .Global-text h3 {
+        font-size: 24px;
+    }
+}
+
+/* =====================================================
+   RESPONSIVE – MOBILE (ANDROID & IPHONE)
+===================================================== */
+@media (max-width: 768px) {
+
+    .Global {
+        padding: 55px 16px;
+        text-align: center;
+    }
+
+    .Global-inner {
+        flex-direction: column;
+    }
+
+    .Global-text {
+        text-align: center;
+    }
+
+    .Global-heading {
+        justify-content: center;
+    }
+
+    .Global-image {
+        justify-content: center !important;
+    }
+
+    .Global-image img {
+        max-width: 320px;
+    }
+
+    .Global-text p {
+        font-size: 15px;
+    }
+}
+
+/* Core Values */
+/* =====================================================
+   CORE VALUES SECTION – BASE
+===================================================== */
+section.py-20 {
+    padding: 80px 0;
+    background: #f8fafc;
+    /* Soft neutral background */
+}
+
+/* =====================================================
+   CONTAINER
+===================================================== */
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 16px;
+}
+
+/* =====================================================
+   SECTION HEADING
+===================================================== */
+.text-center {
+    text-align: center;
+}
+
+.mb-16 {
+    margin-bottom: 64px;
+}
+
+.text-3xl {
+    font-size: 32px;
+}
+
+.text-4xl {
+    font-size: 36px;
+}
+
+.font-display {
+    font-family: "Segoe UI", Roboto, Arial, sans-serif;
+}
+
+.font-bold {
+    font-weight: 700;
+}
+
+.font-semibold {
+    font-weight: 600;
+}
+
+.text-foreground {
+    color: var(--gold);
+}
+
+.text-muted-foreground {
+    color: #64748b;
+    line-height: 1.7;
+}
+
+.max-w-2xl {
+    max-width: 640px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+/* =====================================================
+   GRID
+===================================================== */
+.grid {
+    display: grid;
+    gap: 32px;
+}
+
+.md\:grid-cols-3 {
+    grid-template-columns: repeat(3, 1fr);
+}
+
+.max-w-5xl {
+    max-width: 1024px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+/* =====================================================
+   CARD
+===================================================== */
+.grid>div {
+    background: #ffffff;
+    border-radius: 14px;
+    padding: 32px 24px;
+    transition: transform 0.35s ease, box-shadow 0.35s ease;
+}
+
+.grid>div:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.08);
+}
+
+/* =====================================================
+   ICON CIRCLE
+===================================================== */
+.w-16 {
+    width: 64px;
+    height: 64px;
+}
+
+.h-16 {
+    height: 64px;
+}
+
+.bg-primary\/10 {
+    background: rgba(37, 99, 235, 0.1);
+}
+
+.rounded-full {
+    border-radius: 50%;
+}
+
+.flex {
+    display: flex;
+}
+
+.items-center {
+    align-items: center;
+}
+
+.justify-center {
+    justify-content: center;
+}
+
+.mx-auto {
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.mb-4 {
+    margin-bottom: 16px;
+}
+
+/* =====================================================
+   ICON
+===================================================== */
+.w-8 {
+    width: 32px;
+    height: 32px;
+}
+
+.h-8 {
+    height: 32px;
+}
+
+.text-primary {
+    color: #2563eb;
+}
+
+/* =====================================================
+   CARD TITLE & TEXT
+===================================================== */
+.text-xl {
+    font-size: 20px;
+}
+
+.mb-2 {
+    margin-bottom: 8px;
+}
+
+/* =====================================================
+   RESPONSIVE – TABLET
+===================================================== */
+@media (max-width: 992px) {
+
+    .md\:grid-cols-3 {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .text-4xl {
+        font-size: 32px;
+    }
+}
+
+/* =====================================================
+   RESPONSIVE – MOBILE (ANDROID & IPHONE)
+===================================================== */
+@media (max-width: 768px) {
+
+    section.py-20 {
+        padding: 60px 0;
+    }
+
+    .md\:grid-cols-3 {
+        grid-template-columns: 1fr;
+    }
+
+    .grid>div {
+        padding: 28px 20px;
+    }
+
+    .text-3xl,
+    .text-4xl {
+        font-size: 26px;
+    }
+
+    .text-muted-foreground {
+        font-size: 15px;
+    }
+}
+
+/* Packaging Services */
+/* =====================================================
+   PACKAGING SECTION
+===================================================== */
+.section {
+    padding: 80px 0;
+    background: linear-gradient(180deg, #f5f9ff, #ffffff);
+}
+
+/* =====================================================
+   CONTAINER
+===================================================== */
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 16px;
+    text-align: center;
+}
+
+/* =====================================================
+   SECTION HEADINGS
+===================================================== */
+.section-title {
+    font-size: 34px;
+    font-weight: 700;
+    color: #1d4ed8;
+    /* Distinct premium blue */
+    margin-bottom: 10px;
+}
+
+.section-subtitle {
+    font-size: 16px;
+    color: #64748b;
+    margin-bottom: 36px;
+    line-height: 1.6;
+}
+
+/* =====================================================
+   GRID
+===================================================== */
+.grid-3 {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 28px;
+}
+
+/* =====================================================
+   PACKAGE CARD
+===================================================== */
+.package-box {
+    background: #ffffff;
+    border-radius: 16px;
+    padding: 32px 20px;
+    font-size: 22px;
+    font-weight: 700;
+    color: #0f172a;
+    text-align: center;
+    box-shadow: 0 8px 22px rgba(0, 0, 0, 0.08);
+    transition: transform 0.35s ease, box-shadow 0.35s ease;
+    cursor: pointer;
+}
+
+/* Subtext */
+.package-box span {
+    display: block;
+    margin-top: 10px;
+    font-size: 14px;
+    font-weight: 500;
+    color: #64748b;
+}
+
+/* =====================================================
+   HOVER EFFECT + GLOW
+===================================================== */
+.package-box:hover {
+    transform: translateY(-10px);
+    box-shadow:
+        0 24px 45px rgba(0, 0, 0, 0.15),
+        0 0 30px rgba(37, 99, 235, 0.35);
+}
+
+/* =====================================================
+   RESPONSIVE – TABLET
+===================================================== */
+@media (max-width: 992px) {
+
+    .grid-3 {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .section-title {
+        font-size: 30px;
+    }
+
+    .package-box {
+        font-size: 20px;
+        padding: 28px 18px;
+    }
+}
+
+/* =====================================================
+   RESPONSIVE – MOBILE (ANDROID & IPHONE)
+===================================================== */
+@media (max-width: 768px) {
+
+    .section {
+        padding: 60px 0;
+    }
+
+    .grid-3 {
+        grid-template-columns: 1fr;
+    }
+
+    .section-title {
+        font-size: 26px;
+    }
+
+    .section-subtitle {
+        font-size: 15px;
+    }
+
+    .package-box {
+        font-size: 19px;
+        padding: 26px 16px;
+    }
+}
+
+/* Terms of Delivery */
+/* =====================================================
+   TERMS OF DELIVERY – SECTION
+===================================================== */
+#terms {
+    padding: 96px 0;
+    background: linear-gradient(180deg, #f8fafc, #ffffff);
+}
+
+/* =====================================================
+   CONTAINER
+===================================================== */
+#terms .container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 16px;
+}
+
+/* =====================================================
+   SECTION HEADER
+===================================================== */
+#terms .text-center {
+    text-align: center;
+}
+
+#terms .mb-16 {
+    margin-bottom: 64px;
+}
+
+#terms span.inline-block {
+    display: inline-block;
+    background: rgba(14, 165, 233, 0.12);
+    color: #0284c7;
+    padding: 6px 16px;
+    border-radius: 999px;
+    font-size: 14px;
+    font-weight: 600;
+    margin-bottom: 16px;
+}
+
+/* H2 – DIFFERENT COLOR */
+#terms h2 {
+    font-size: 40px;
+    font-weight: 800;
+    color: #ef121a;
+    /* Distinct heading color */
+    margin-bottom: 20px;
+}
+
+#terms p {
+    color: #64748b;
+    line-height: 1.7;
+}
+
+/* =====================================================
+   GRID
+===================================================== */
+#terms .grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 24px;
+}
+
+/* =====================================================
+   CARD
+===================================================== */
+#terms .group {
+    background: #ffffff;
+    border-radius: 18px;
+    padding: 24px;
+    border: 1px solid #e5e7eb;
+    position: relative;
+    transition: transform 0.35s ease, box-shadow 0.35s ease, border 0.35s ease;
+    opacity: 1;
+}
+
+/* Hover lift + glow */
+#terms .group:hover {
+    transform: translateY(-10px);
+    border-color: #93c5fd;
+    box-shadow:
+        0 25px 50px rgba(0, 0, 0, 0.12),
+        0 0 35px rgba(59, 130, 246, 0.35);
+}
+
+/* =====================================================
+   ICON BOX
+===================================================== */
+#terms .group>div:first-child {
+    width: 48px;
+    height: 48px;
+    border-radius: 12px;
+    background: #f1f5f9;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 16px;
+    transition: background 0.3s ease;
+}
+
+#terms .group:hover>div:first-child {
+    background: rgba(14, 165, 233, 0.15);
+}
+
+#terms svg {
+    width: 24px;
+    height: 24px;
+    color: #2563eb;
+    transition: color 0.3s ease;
+}
+
+#terms .group:hover svg {
+    color: #0284c7;
+}
+
+/* =====================================================
+   CARD TEXT
+===================================================== */
+#terms .text-2xl {
+    font-size: 22px;
+    font-weight: 800;
+    color: #e10910;
+    margin-bottom: 4px;
+}
+
+#terms h3 {
+    font-size: 18px;
+    font-weight: 600;
+    color: #0f172a;
+    margin-bottom: 10px;
+}
+
+#terms .text-sm {
+    font-size: 14px;
+    color: #64748b;
+}
+
+/* =====================================================
+   ADDITIONAL INFO
+===================================================== */
+#terms .mt-12 {
+    margin-top: 48px;
+    text-align: center;
+}
+
+#terms a {
+    color: #d90d0d;
+    font-weight: 600;
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+#terms a:hover {
+    color: #0284c7;
+}
+
+/* =====================================================
+   RESPONSIVE – TABLET
+===================================================== */
+@media (max-width: 1024px) {
+    #terms .grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    #terms h2 {
+        font-size: 34px;
+    }
+}
+
+/* =====================================================
+   RESPONSIVE – MOBILE (ANDROID & iPHONE)
+===================================================== */
+@media (max-width: 768px) {
+
+    #terms {
+        padding: 72px 0;
+    }
+
+    #terms .grid {
+        grid-template-columns: 1fr;
+    }
+
+    #terms h2 {
+        font-size: 28px;
+    }
+
+    #terms p {
+        font-size: 15px;
+    }
+
+    #terms .group {
+        padding: 22px;
+    }
+}

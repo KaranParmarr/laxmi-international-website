@@ -1,0 +1,1563 @@
+/* --- Entrance Animation --- */
+@keyframes slideInFast {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+section {
+    padding: 80px 10%;
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    animation: slideInFast 0.3s ease-out;
+    /* Even faster animation */
+}
+
+/* Coal/ Coconut/ Anthracite */
+/* =====================================================
+   PRODUCT HERO
+===================================================== */
+.product-hero {
+    position: relative;
+}
+
+.product-hero::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.45);
+    z-index: 1;
+}
+
+.product-hero .container {
+    position: relative;
+    z-index: 2;
+}
+
+.product-hero h1,
+.product-hero p {
+    color: #fff;
+}
+
+/* Mobile Hero */
+@media (max-width: 767px) {
+    .product-hero {
+        padding: 70px 16px;
+        background-position: center top;
+        text-align: center;
+    }
+
+    .product-hero h1 {
+        font-size: 32px;
+        line-height: 1.3;
+    }
+
+    .product-hero p {
+        font-size: 16px;
+        margin-top: 8px;
+    }
+}
+
+/* =====================================================
+   SECTION HEADINGS
+===================================================== */
+.section-title {
+    font-size: 32px;
+    font-weight: 700;
+    text-align: center;
+    color: #0b1f3a;
+    margin-bottom: 10px;
+}
+
+.section-subtitle {
+    font-size: 18px;
+    color: #6f7a87;
+    text-align: center;
+    margin-bottom: 35px;
+}
+
+/* Mobile heading scale */
+@media (max-width: 767px) {
+    .section-title {
+        font-size: 26px;
+    }
+
+    .section-subtitle {
+        font-size: 15px;
+    }
+}
+
+/* =====================================================
+   TABS
+===================================================== */
+.tabs {
+    display: flex;
+    justify-content: center;
+    gap: 12px;
+    margin-bottom: 35px;
+    flex-wrap: wrap;
+}
+
+.tab-btn {
+    padding: 12px 24px;
+    border: none;
+    font-size: 16px;
+    background: #e9ecef;
+    color: #333;
+    font-weight: 600;
+    border-radius: 30px;
+    cursor: pointer;
+    transition: 0.3s ease;
+}
+
+.tab-btn.active,
+.tab-btn:hover {
+    background: #009688;
+    color: #fff;
+}
+
+@media (max-width: 767px) {
+    .tab-btn {
+        padding: 10px 18px;
+        font-size: 14px;
+        text-align: center;
+    }
+}
+
+/* =====================================================
+   TAB CONTENT
+===================================================== */
+.tab-content {
+    display: none;
+    animation: fadeIn 0.4s ease;
+}
+
+.tab-content.active {
+    display: block;
+}
+
+/* =====================================================
+   CARD
+===================================================== */
+.card {
+    background: #fff;
+    padding: 25px;
+    border-radius: 12px;
+    box-shadow: 0 3px 12px rgba(0, 0, 0, 0.07);
+    transition: 0.3s ease;
+}
+
+.card:hover {
+    transform: translateY(-4px);
+}
+
+/* Desktop-specific offsets (kept as-is) */
+.card p {
+    margin-left: 260px;
+}
+
+.card h3 {
+    margin-left: 400px;
+    font-size: 22px;
+    font-weight: 700;
+    color: #fbbf24;
+}
+
+/* Card text */
+.card h2 {
+    font-size: 18px;
+    font-weight: 600;
+    color: #0b1f3a;
+    margin-top: 15px;
+}
+
+.card h4 {
+    font-size: 24px;
+    font-weight: 600;
+    color: #f40837;
+    margin-bottom: 8px;
+}
+
+/* Images */
+.card img {
+    width: 100%;
+    border-radius: 12px 12px 0 0;
+    margin-bottom: 15px;
+}
+
+/* =====================================================
+   CARD LIST (FEATURES)
+===================================================== */
+.card ul {
+    list-style: none;
+    padding-left: 0;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 12px 16px;
+    margin-top: 10px;
+    text-align: left;
+}
+
+.card ul li {
+    display: flex;
+    align-items: start;
+    gap: 8px;
+    font-size: 15px;
+    color: #333;
+    line-height: 1.35;
+}
+
+.card ul li span {
+    display: none;
+}
+
+.card ul li::before {
+    content: "✓";
+    width: 20px;
+    height: 20px;
+    min-width: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 50%;
+    border: 2px solid #2ecc71;
+    font-size: 12px;
+    font-weight: bold;
+    color: #2ecc71;
+    margin-top: 2px;
+}
+
+.card ul li:hover::before {
+    background: #2ecc71;
+    color: #fff;
+}
+
+/* Tablet */
+@media (max-width: 768px) {
+    .card ul {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+/* Mobile */
+@media (max-width: 480px) {
+    .card ul {
+        grid-template-columns: 1fr;
+    }
+}
+
+/* =====================================================
+   APPLICATION PILLS
+===================================================== */
+.card li {
+    list-style: none;
+    background: #f2f6ff;
+    padding: 6px 12px;
+    margin: 6px 0;
+    display: inline-block;
+    border-radius: 30px;
+    font-size: 14px;
+    color: #0b1f3a;
+    border: 1px solid #dbe3ff;
+    transition: 0.3s ease;
+    cursor: pointer;
+}
+
+.card li:hover {
+    background: #3159d2;
+    color: #fff;
+    border-color: #3159d2;
+    transform: scale(1.05);
+}
+
+/* =====================================================
+   GRID
+===================================================== */
+.grid-3 {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 25px;
+}
+
+/* =====================================================
+   PACKAGE BOX
+===================================================== */
+.package-box {
+    background: #fff;
+    padding: 25px;
+    text-align: center;
+    font-size: 22px;
+    font-weight: 700;
+    border-radius: 10px;
+    border: 2px solid #0a66c2;
+    transition: 0.3s;
+}
+
+.package-box span {
+    display: block;
+    margin-top: 8px;
+    font-size: 14px;
+    font-weight: normal;
+    color: #555;
+}
+
+.package-box:hover {
+    background: #0a66c2;
+    color: #fff;
+}
+
+/* =====================================================
+   BACKGROUND
+===================================================== */
+.bg-light {
+    background: #eef6ff;
+}
+
+/* =====================================================
+   ANIMATIONS
+===================================================== */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(10px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes fadeUp {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes zoomIn {
+    from {
+        opacity: 0;
+        transform: scale(0.85);
+    }
+
+    to {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+
+/* =====================================================
+   MOBILE CENTER ALIGNMENT (ANDROID & IPHONE)
+===================================================== */
+@media (max-width: 767px) {
+
+    .card,
+    .package-box {
+        text-align: center;
+    }
+
+    .card p,
+    .card h3 {
+        margin-left: 0;
+        text-align: center;
+    }
+
+    .card h2 {
+        text-align: center;
+    }
+
+    .card img {
+        margin-left: auto;
+        margin-right: auto;
+        display: block;
+    }
+
+    .card ul {
+        justify-items: center;
+        text-align: left;
+    }
+
+    .card ul li {
+        max-width: 320px;
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+    .grid-3 {
+        grid-template-columns: 1fr;
+    }
+}
+
+/* =====================================================
+   TABLET LAYOUT
+===================================================== */
+@media (max-width: 900px) {
+
+    .hero-grid,
+    .about-grid {
+        grid-template-columns: 1fr;
+        text-align: center;
+    }
+
+    .hero-img img {
+        max-width: 90%;
+        margin: auto;
+        display: block;
+    }
+
+    .grid-4,
+    .app-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+/* Responsive: header image */
+/* Center text inside page title */
+#page-title .title-center {
+    text-align: center;
+}
+
+/* Make H1 centered and responsive */
+#page-title h1 {
+    font-size: 48px;
+    font-weight: 700;
+    text-align: center;
+    color: #fff;
+}
+
+/* Mobile Fixes – Android + iPhone */
+@media (max-width: 767px) {
+    #page-title {
+        padding: 100px 20px !important;
+        background-position: center top !important;
+    }
+
+    #page-title h1 {
+        font-size: 32px;
+        line-height: 1.3;
+    }
+}
+
+/* iPhone-specific enhancement */
+@media only screen and (min-device-width: 320px) and (max-device-width: 480px) {
+
+    #page-title {
+        background-position: center center !important;
+        padding: 100px 10px !important;
+    }
+
+    #page-title h1 {
+        font-size: 30px;
+    }
+}
+
+/* --- Container & Alignment Logic --- */
+.coconut-container,
+.coal-container,
+.anthracite-container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 60px;
+    width: 100%;
+}
+
+/* Logic for "1-Right, 2-Left, 3-Right" image alignment */
+.reverse {
+    flex-direction: row-reverse;
+}
+
+.content {
+    flex: 1.2;
+}
+
+.image-wrapper-coconut,
+.image-wrapper-coal,
+.image-wrapper-anthracite {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+}
+
+/* --- Section Styling (Class specific) --- */
+
+/* 1. Coconut Section */
+.coconut {
+    background: linear-gradient(135deg, #e8f5e9 0%, #c8e6c9 100%);
+}
+
+.h2-coconut {
+    color: #1b5e20;
+    font-size: 2.5rem;
+    margin-bottom: 25px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+/* 2. Coal Section */
+.coal {
+    background: linear-gradient(135deg, #eceff1 0%, #cfd8dc 100%);
+}
+
+.h2-coal {
+    color: #37474f;
+    font-size: 2.5rem;
+    margin-bottom: 25px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+/* 3. Anthracite Section */
+.anthracite {
+    background: linear-gradient(135deg, #e8eaf6 0%, #c5cae9 100%);
+}
+
+.h2-anthracite {
+    color: #1a237e;
+    font-size: 2.5rem;
+    margin-bottom: 25px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+/* --- Paragraph Styling (Targeting 5 lines feel) --- */
+p {
+    font-size: 1.1rem;
+    line-height: 1.7;
+    /* Ensures the ~5 lines look on desktop */
+    margin-bottom: 20px;
+    color: #333;
+    text-align: justify;
+}
+
+/* --- Image Styling & Effects --- */
+img {
+    width: 100%;
+    max-width: 500px;
+    border-radius: 10px;
+    border: 8px solid transparent;
+    /* Required for the JS border change */
+    transition: transform 0.2s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    cursor: pointer;
+}
+
+img:hover {
+    transform: scale(1.08);
+    /* Fast hover pop effect */
+}
+
+/* --- RESPONSIVE DESIGN --- */
+
+/* Tablets (iPad, etc.) */
+@media (max-width: 1024px) {
+    section {
+        padding: 60px 5%;
+    }
+
+    .coconut-container,
+    .coal-container,
+    .anthracite-container {
+        gap: 30px;
+    }
+
+    h2 {
+        font-size: 2rem !important;
+    }
+}
+
+/* Mobile Devices (iPhone, Android) */
+@media (max-width: 768px) {
+    section {
+        padding: 40px 20px;
+    }
+
+    .coconut-container,
+    .coal-container,
+    .anthracite-container,
+    .reverse {
+        flex-direction: column !important;
+        /* Stack vertically */
+        text-align: center;
+    }
+
+    .content {
+        order: 2;
+        /* Text moves below image */
+    }
+
+    .image-wrapper-coconut,
+    .image-wrapper-coal,
+    .image-wrapper-anthracite {
+        order: 1;
+        /* Image stays on top */
+        margin-bottom: 30px;
+    }
+
+    img {
+        width: 100%;
+        max-width: 350px;
+    }
+
+    p {
+        text-align: center;
+        font-size: 1rem;
+    }
+}
+
+/* Applications forms */
+/* =========================
+   ROOT VARIABLES
+========================= */
+:root {
+    --section-bg: #edf4fb;
+    --card-bg: #ffffff;
+    --primary: #0b3a6a;
+    --accent: #2a7de1;
+    --muted: #5f6c7b;
+    --pill-bg: #f1f6ff;
+    --pill-border: #dbe7ff;
+    --glow: rgba(42, 125, 225, 0.35);
+}
+
+/* =========================
+   SECTION
+========================= */
+.product-section-three {
+    background: linear-gradient(180deg, #edf4fb 0%, #f7fbff 100%);
+    padding: 70px 20px;
+    text-align: center;
+
+    animation: sectionFade 1s ease-out both;
+    animation-timeline: view();
+    animation-range: entry 0% cover 30%;
+}
+
+@keyframes sectionFade {
+    from {
+        opacity: 0;
+        transform: translateY(60px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* =========================
+   CONTAINER
+========================= */
+.contain-product-form {
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+/* =========================
+   SECTION HEADINGS
+========================= */
+.section-title {
+    font-size: clamp(28px, 3vw, 36px);
+    font-weight: 700;
+    color: var(--primary);
+    margin-bottom: 8px;
+    text-align: center;
+}
+
+.section-subtitle {
+    font-size: 16px;
+    color: var(--muted);
+    max-width: 620px;
+    margin: 0 auto 50px;
+    line-height: 1.6;
+    text-align: center;
+}
+
+/* =========================
+   GRID (MATCH IMAGE)
+========================= */
+.product-one {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(300px, 1fr));
+    gap: 36px;
+    justify-content: center;
+    align-items: stretch;
+}
+
+/* =========================
+   CARDS
+========================= */
+.card-one,
+.card-two {
+    background: var(--card-bg);
+    border-radius: 18px;
+    padding: 28px 26px 34px;
+    box-shadow: 0 14px 36px rgba(0, 0, 0, 0.08);
+    text-align: center;
+    transition: transform 0.35s ease, box-shadow 0.35s ease;
+
+    animation: cardFade 0.9s ease both;
+    animation-timeline: view();
+    animation-range: entry 0% cover 40%;
+}
+
+@keyframes cardFade {
+    from {
+        opacity: 0;
+        transform: translateY(50px) scale(0.97);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0) scale(1);
+    }
+}
+
+/* =========================
+   IMAGES (CENTER + GLOW)
+========================= */
+.card-one img,
+.card-two img {
+    width: 100%;
+    max-width: 360px;
+    max-height: 260px;
+    object-fit: contain;
+    display: block;
+    margin: 0 auto 22px;
+    border-radius: 12px;
+    transition: transform 0.4s ease, box-shadow 0.4s ease;
+}
+
+/* Image hover + glow */
+.card-one img:hover,
+.card-two img:hover {
+    transform: scale(1.06);
+    box-shadow:
+        0 18px 45px rgba(0, 0, 0, 0.18),
+        0 0 32px var(--glow);
+}
+
+/* =========================
+   CARD TEXT
+========================= */
+.card-one h3,
+.card-two h3 {
+    font-size: 20px;
+    font-weight: 700;
+    color: var(--primary);
+    margin-bottom: 10px;
+    text-align: center;
+}
+
+.card-one p,
+.card-two p {
+    font-size: 15px;
+    color: var(--muted);
+    line-height: 1.6;
+    margin-bottom: 18px;
+    text-align: center;
+}
+
+/* Different color h2 inside card */
+.card-one h2,
+.card-two h2 {
+    font-size: 16px;
+    font-weight: 700;
+    color: var(--accent);
+    margin-bottom: 14px;
+    text-align: center;
+}
+
+/* =========================
+   APPLICATION PILLS
+========================= */
+.card-one li,
+.card-two li {
+    list-style: none;
+    font-size: 14px;
+    color: #1f2d3d;
+    background: var(--pill-bg);
+    border: 1px solid var(--pill-border);
+    padding: 8px 16px;
+    border-radius: 999px;
+    margin: 7px auto;
+    width: fit-content;
+    transition: background 0.3s ease, border 0.3s ease;
+}
+
+.card-one li:hover,
+.card-two li:hover {
+    background: #e7f0ff;
+    border-color: var(--accent);
+}
+
+/* =========================
+   CARD HOVER LIFT
+========================= */
+.card-one:hover,
+.card-two:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 22px 48px rgba(0, 0, 0, 0.12);
+}
+
+/* =========================
+   RESPONSIVE
+========================= */
+
+/* Tablet */
+@media (max-width: 992px) {
+    .product-one {
+        gap: 28px;
+    }
+}
+
+/* Mobile (Android & iPhone) */
+@media (max-width: 768px) {
+    .product-one {
+        grid-template-columns: 1fr;
+    }
+
+    .product-section-three {
+        padding: 55px 16px;
+    }
+
+    .card-one,
+    .card-two {
+        padding: 24px 20px 30px;
+    }
+
+    .card-one img,
+    .card-two img {
+        max-width: 100%;
+    }
+}
+
+/* Product one start */
+/* --- Global Styles --- */
+:root {
+    /* A warm, human-centric background color (Soft Sand/Cream) */
+    --bg-color: #fdfaf5;
+    --heading-color: #1a4332;
+    /* Deep forest green for contrast */
+    --text-color: #4a4a4a;
+    --transition-speed: 0.5s;
+}
+
+/* --- Section Layout --- */
+.product-section-one {
+    display: flex;
+    /* Use row-reverse because your HTML has image first, 
+       but the screenshot shows text on left/image on right */
+    flex-direction: row-reverse;
+    align-items: center;
+    justify-content: center;
+    padding: 60px 10%;
+    background-color: var(--bg-color);
+    min-height: 80vh;
+    gap: 50px;
+    overflow: hidden;
+    /* Scroll Animation Base */
+    opacity: 0;
+    transform: translateY(30px);
+    animation: fadeInUp 1s ease-out forwards;
+}
+
+/* --- Content Styling --- */
+.product-content {
+    flex: 1;
+    text-align: left;
+}
+
+.product-content h2 {
+    color: var(--heading-color);
+    font-size: 2.5rem;
+    margin-bottom: 20px;
+    line-height: 1.2;
+}
+
+.product-content h2 span {
+    font-size: 1.1rem;
+    color: #666;
+    font-weight: 400;
+}
+
+.product-content p {
+    color: var(--text-color);
+    line-height: 1.8;
+    font-size: 1.1rem;
+}
+
+/* --- Image Styling --- */
+.product-image {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+}
+
+.product-image img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 10px;
+    border: 6px solid #e0e0e0;
+    /* Default border */
+    transition: transform var(--transition-speed), box-shadow var(--transition-speed);
+}
+
+/* --- Hover & Glow Effects --- */
+.product-image img:hover {
+    transform: scale(1.05);
+    cursor: pointer;
+    /* Glow effect */
+    box-shadow: 0 0 30px rgba(0, 0, 0, 0.2), 0 0 20px rgba(26, 67, 50, 0.4);
+    /* 7-Color Border Animation */
+    animation: rainbowBorder 3s infinite linear;
+}
+
+/* --- Keyframes --- */
+
+/* Scroll Animation (Fade In Up) */
+@keyframes fadeInUp {
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* 7 Color Border Cycle */
+@keyframes rainbowBorder {
+    0% {
+        border-color: #ff0000;
+    }
+
+    /* Red */
+    14% {
+        border-color: #ff7f00;
+    }
+
+    /* Orange */
+    28% {
+        border-color: #ffff00;
+    }
+
+    /* Yellow */
+    42% {
+        border-color: #00ff00;
+    }
+
+    /* Green */
+    56% {
+        border-color: #0000ff;
+    }
+
+    /* Blue */
+    70% {
+        border-color: #4b0082;
+    }
+
+    /* Indigo */
+    84% {
+        border-color: #9400d3;
+    }
+
+    /* Violet */
+    100% {
+        border-color: #ff0000;
+    }
+
+    /* Back to Red */
+}
+
+/* --- Responsive Alignment (Tablet & Mobile) --- */
+
+/* Tablet (iPad) */
+@media (max-width: 1024px) {
+    .product-section-one {
+        padding: 40px 5%;
+        gap: 30px;
+    }
+
+    .product-content h2 {
+        font-size: 2rem;
+    }
+}
+
+/* Mobile (iPhone & Android) */
+@media (max-width: 768px) {
+    .product-section-one {
+        flex-direction: column;
+        /* Stack image on top for mobile */
+        padding: 40px 20px;
+        text-align: center;
+    }
+
+    .product-content {
+        text-align: center;
+    }
+
+    .product-content h2 {
+        font-size: 1.8rem;
+    }
+
+    .product-image img {
+        width: 100%;
+        max-width: 400px;
+    }
+
+    /* Ensure image comes first visually on mobile if desired, 
+       otherwise text will be above image due to 'column' */
+    .product-image {
+        order: 1;
+    }
+
+    .product-content {
+        order: 2;
+    }
+}
+
+/* product two  */
+/* --- Global Section 2 Styling --- */
+.product-section-two {
+    /* Human-like warm background */
+    background: linear-gradient(135deg, #fff5f2 0%, #f7eeeb 100%);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 80px 10%;
+    min-height: 70vh;
+    gap: 60px;
+    overflow: hidden;
+    /* Scroll Animation */
+    opacity: 0;
+    transform: translateY(40px);
+    animation: revealSection 1.2s ease-out forwards;
+}
+
+/* --- Container Alignment --- */
+.product-image {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+}
+
+.product-content {
+    flex: 1;
+    /* Centers text content internally */
+    text-align: center;
+}
+
+/* --- Typography --- */
+.product-section-two h2 {
+    /* Distinct Terracotta color for the heading */
+    color: #b35a38;
+    font-size: 2.2rem;
+    margin-bottom: 15px;
+    line-height: 1.3;
+}
+
+.product-section-two h2 span {
+    font-size: 1rem;
+    color: #8a7670;
+    font-weight: 500;
+    display: block;
+    margin-top: 5px;
+}
+
+.product-section-two p {
+    color: #5d5451;
+    line-height: 1.8;
+    max-width: 500px;
+    margin: 0 auto;
+    /* Centers the paragraph block */
+}
+
+/* --- Image, Hover & 7-Color Border --- */
+.product-image img {
+    width: 100%;
+    max-width: 450px;
+    border-radius: 15px;
+    /* Initial thick border */
+    border: 8px solid #ffffff;
+    transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
+}
+
+.product-image img:hover {
+    transform: scale(1.03) rotate(-1deg);
+    cursor: pointer;
+    /* Glow Effect */
+    box-shadow: 0 0 25px rgba(179, 90, 56, 0.3);
+    /* Trigger 7-color animation */
+    animation: sevenColors 4s infinite linear;
+}
+
+/* --- Keyframes --- */
+
+/* Scroll Animation */
+@keyframes revealSection {
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* 7 Color Border Animation */
+@keyframes sevenColors {
+    0% {
+        border-color: #ff5f5f;
+    }
+
+    /* Red-ish */
+    15% {
+        border-color: #ffbd5f;
+    }
+
+    /* Orange */
+    30% {
+        border-color: #f6ff5f;
+    }
+
+    /* Yellow */
+    45% {
+        border-color: #5fff7d;
+    }
+
+    /* Green */
+    60% {
+        border-color: #5fafff;
+    }
+
+    /* Blue */
+    75% {
+        border-color: #8a5fff;
+    }
+
+    /* Indigo */
+    100% {
+        border-color: #ff5fec;
+    }
+
+    /* Violet */
+}
+
+/* --- Responsive Layout --- */
+
+/* Tablet (iPad) */
+@media (max-width: 1024px) {
+    .product-section-two {
+        padding: 60px 5%;
+        gap: 30px;
+    }
+
+    .product-section-two h2 {
+        font-size: 1.8rem;
+    }
+}
+
+/* Mobile (Android & iPhone) */
+@media (max-width: 768px) {
+    .product-section-two {
+        flex-direction: column;
+        /* Stacks vertically */
+        padding: 50px 20px;
+        text-align: center;
+    }
+
+    .product-image {
+        width: 100%;
+        margin-bottom: 20px;
+    }
+
+    .product-image img {
+        max-width: 90%;
+        /* Better fit for small screens */
+    }
+
+    .product-section-two h2 {
+        font-size: 1.6rem;
+    }
+
+    .product-section-two p {
+        font-size: 0.95rem;
+    }
+}
+
+/* Product three Section */
+/* --- Section 3: Ocean Breeze Theme --- */
+.product-section-three {
+    /* Human-friendly Soft Ocean Gradient */
+    background: linear-gradient(135deg, #f0f7ff 0%, #e6eeee 100%);
+    display: flex;
+    flex-direction: row;
+    /* Image on Left for Desktop */
+    align-items: center;
+    justify-content: center;
+    padding: 100px 10%;
+    min-height: 75vh;
+    gap: 70px;
+    overflow: hidden;
+
+    /* Scroll Animation: Fade and Slide in from Left */
+    opacity: 0;
+    transform: translateX(-50px);
+    animation: scrollRevealSide 1.2s ease-out forwards;
+}
+
+/* --- Image Container & Glow Effects --- */
+.product-image {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+}
+
+.product-image img {
+    width: 100%;
+    max-width: 480px;
+    border-radius: 20px;
+    border: 7px solid #ffffff;
+    /* Clean White Base Border */
+    transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.05);
+}
+
+/* Image Hover: Glow + 7 Color Rainbow Border */
+.product-image img:hover {
+    transform: scale(1.04);
+    cursor: crosshair;
+    /* Soft Blue Glow */
+    box-shadow: 0 0 30px rgba(0, 119, 190, 0.4);
+    /* 7 Color Border Animation Trigger */
+    animation: rainbowCycle 3.5s infinite linear;
+}
+
+/* --- Content Alignment & Typography --- */
+.product-content {
+    flex: 1;
+    text-align: center;
+    /* Center alignment for text block */
+}
+
+.product-section-three h2 {
+    /* Distinct Deep Navy Blue for Water Theme */
+    color: #004d7a;
+    font-size: 2.4rem;
+    margin-bottom: 25px;
+    line-height: 1.2;
+}
+
+.product-section-three h2 span {
+    font-size: 1.1rem;
+    color: #5a7d95;
+    /* Muted Slate Blue */
+    font-weight: 500;
+    display: block;
+    margin-top: 8px;
+}
+
+.product-section-three p {
+    color: #445a67;
+    line-height: 1.9;
+    font-size: 1.1rem;
+    max-width: 550px;
+    margin: 0 auto 15px auto;
+}
+
+/* --- Keyframe Animations --- */
+
+/* Scroll Reveal Animation */
+@keyframes scrollRevealSide {
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+/* 7-Color Border Rotation */
+@keyframes rainbowCycle {
+    0% {
+        border-color: #e81416;
+    }
+
+    /* 1. Red */
+    14% {
+        border-color: #ffa500;
+    }
+
+    /* 2. Orange */
+    28% {
+        border-color: #faeb36;
+    }
+
+    /* 3. Yellow */
+    42% {
+        border-color: #79c314;
+    }
+
+    /* 4. Green */
+    57% {
+        border-color: #487de7;
+    }
+
+    /* 5. Blue */
+    71% {
+        border-color: #4b0082;
+    }
+
+    /* 6. Indigo */
+    85% {
+        border-color: #ee82ee;
+    }
+
+    /* 7. Violet */
+    100% {
+        border-color: #e81416;
+    }
+
+    /* Back to Red */
+}
+
+/* --- Responsive Layout (Mobile & Tablet) --- */
+
+/* Tablet (iPad) */
+@media (max-width: 1024px) {
+    .product-section-three {
+        padding: 60px 5%;
+        gap: 40px;
+    }
+
+    .product-section-three h2 {
+        font-size: 2rem;
+    }
+}
+
+/* Mobile (Android & iPhone) */
+@media (max-width: 768px) {
+    .product-section-three {
+        flex-direction: column;
+        /* Stack vertically for mobile */
+        padding: 50px 24px;
+        text-align: center;
+    }
+
+    .product-image {
+        width: 100%;
+        margin-bottom: 25px;
+    }
+
+    .product-image img {
+        max-width: 100%;
+        /* Full width on smaller screens */
+        border-width: 5px;
+    }
+
+    .product-section-three h2 {
+        font-size: 1.7rem;
+    }
+
+    .product-section-three p {
+        font-size: 1rem;
+        text-align: center;
+    }
+}
+
+/* Unique card styles/animations */
+/* --- Global Container Styling --- */
+.unique-product-container {
+    /* Human-friendly Warm Linen Background */
+    background: linear-gradient(135deg, #f9f4f2 0%, #ede4e0 100%);
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    padding: 80px 5%;
+    gap: 40px;
+    min-height: 100vh;
+    overflow: hidden;
+
+    /* Scroll Animation */
+    opacity: 0;
+    transform: translateY(50px);
+    animation: fadeInUp 1.2s cubic-bezier(0.22, 1, 0.36, 1) forwards;
+}
+
+/* --- Card Styling --- */
+.unique-product-card {
+    background: #ffffff;
+    border-radius: 20px;
+    padding: 25px;
+    width: 100%;
+    max-width: 400px;
+    /* Perfect for Grid/Flex layouts */
+    text-align: center;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
+    transition: all 0.5s ease;
+    border: 1px solid rgba(0, 0, 0, 0.03);
+}
+
+/* Card Hover Effect */
+.unique-product-card:hover {
+    transform: translateY(-15px);
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+}
+
+/* --- Image Alignment & Effects --- */
+.unique-product-image {
+    width: 100%;
+    height: 250px;
+    /* Fixed height for uniformity */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 20px;
+    overflow: hidden;
+    border-radius: 15px;
+}
+
+.unique-product-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    /* Ensures image covers area without distortion */
+    border-radius: 15px;
+    border: 5px solid #f1f1f1;
+    transition: all 0.4s ease;
+}
+
+/* Image Hover: Glow + 7-Color Border */
+.unique-product-image img:hover {
+    cursor: pointer;
+    transform: scale(1.1);
+    /* Soft Warm Glow */
+    box-shadow: 0 0 25px rgba(210, 105, 30, 0.3);
+    /* 7-Color Rainbow Animation */
+    animation: rainbowBorder 4s infinite linear;
+}
+
+/* --- Typography (H3 & P) --- */
+.unique-product-info h3 {
+    /* Distinct Deep Charcoal/Blue Color */
+    color: #2c3e50;
+    font-size: 1.6rem;
+    margin-bottom: 12px;
+    font-weight: 700;
+    transition: color 0.3s ease;
+}
+
+/* Change header color on card hover */
+.unique-product-card:hover h3 {
+    color: #d2691e;
+    /* Changes to a warm Terracotta */
+}
+
+.unique-product-info p {
+    color: #6d6d6d;
+    line-height: 1.6;
+    font-size: 1rem;
+    padding: 0 10px;
+}
+
+/* --- Keyframe Animations --- */
+
+/* Section Entry Animation */
+@keyframes fadeInUp {
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* 7-Color Rainbow Cycle */
+@keyframes rainbowBorder {
+    0% {
+        border-color: #ff4d4d;
+    }
+
+    /* 1. Coral Red */
+    14% {
+        border-color: #ff9f4d;
+    }
+
+    /* 2. Orange */
+    28% {
+        border-color: #ffdb4d;
+    }
+
+    /* 3. Yellow */
+    42% {
+        border-color: #4dff88;
+    }
+
+    /* 4. Soft Green */
+    56% {
+        border-color: #4d94ff;
+    }
+
+    /* 5. Sky Blue */
+    70% {
+        border-color: #944dff;
+    }
+
+    /* 6. Purple */
+    84% {
+        border-color: #ff4da6;
+    }
+
+    /* 7. Pink */
+    100% {
+        border-color: #ff4d4d;
+    }
+
+    /* Back to Start */
+}
+
+/* --- Responsive Layout (Tablet & Mobile) --- */
+
+/* Tablet (iPad) */
+@media (max-width: 1024px) {
+    .unique-product-container {
+        padding: 60px 20px;
+        gap: 30px;
+    }
+
+    .unique-product-card {
+        max-width: 340px;
+    }
+}
+
+/* Mobile (Android & iPhone) */
+@media (max-width: 768px) {
+    .unique-product-container {
+        flex-direction: column;
+        padding: 40px 15px;
+    }
+
+    .unique-product-card {
+        max-width: 100%;
+        /* Cards take full width on mobile */
+        margin-bottom: 10px;
+    }
+
+    .unique-product-image {
+        height: 200px;
+        /* Smaller image area for mobile screens */
+    }
+
+    .unique-product-info h3 {
+        font-size: 1.4rem;
+    }
+
+    .unique-product-info p {
+        font-size: 0.95rem;
+    }
+}

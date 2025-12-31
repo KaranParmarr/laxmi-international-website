@@ -1,0 +1,487 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, sans-serif;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    font-family: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+    overflow-x: hidden;
+    background: #fff;
+    color: #222;
+}
+
+/* =============================
+   BASE TOP BAR (ALL DEVICES)
+============================= */
+.top-bar {
+    height: 40px;
+    background-color: #020a2a;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 20px;
+    font-size: 13px;
+}
+
+/* LEFT INFO */
+.top-left {
+    display: flex;
+    align-items: center;
+    gap: 18px;
+    flex-wrap: wrap;
+}
+
+.top-left span {
+    display: flex;
+    align-items: center;
+    color: #ffffff;
+    gap: 6px;
+    white-space: nowrap;
+}
+
+.top-left a {
+    color: #ffffff;
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+.top-left a:hover {
+    color: #d4af37;
+}
+
+/* RIGHT SOCIAL ICONS */
+.top-right {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+}
+
+.top-right a {
+    color: #ffffff;
+    font-size: 14px;
+    transition: color 0.3s ease, transform 0.3s ease;
+}
+
+.top-right a:hover {
+    color: #d4af37;
+    transform: translateY(-2px);
+}
+
+/* =============================
+   TABLET (768px – 1199px)
+============================= */
+@media (max-width: 1199px) and (min-width: 768px) {
+    .top-bar {
+        height: 40px;
+        font-size: 12.5px;
+        padding: 0 24px;
+    }
+
+    .top-left {
+        gap: 14px;
+    }
+
+    .top-right a {
+        font-size: 13px;
+    }
+}
+
+/* =============================
+   ANDROID & IPHONE ≤767px
+============================= */
+@media (max-width: 767px) {
+    .top-bar {
+        display: none;
+    }
+}
+
+/* ==================================================
+   BASE NAVBAR (ALL DEVICES)
+================================================== */
+.navbar {
+    padding: 1px 0;
+    background: #fff;
+    color: #111;
+    position: sticky;
+    top: 0;
+    z-index: 100;
+}
+
+.nav-container {
+    margin: 0 auto;
+    height: 80px;
+    /* Desktop default */
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+/* ==================================================
+   LOGO (ALL DEVICES)
+================================================== */
+.logo {
+    display: flex;
+    align-items: center;
+}
+
+.logo img {
+    height: 56px;
+    width: auto;
+    object-fit: contain;
+}
+
+/* ==================================================
+   NAV LINKS
+================================================== */
+.nav-menu {
+    display: flex;
+    gap: 28px;
+}
+
+.nav-menu a {
+    position: relative;
+    color: #111;
+    font-weight: 600;
+    text-decoration: none;
+    padding: 6px 0;
+    transition: color 0.3s ease;
+}
+
+/* Hover (arrow goes) */
+.nav-menu a:hover {
+    color: #d4af37;
+}
+
+/* Underline animation */
+.nav-menu a::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: -6px;
+    width: 0;
+    height: 3px;
+    background: currentColor;
+    transition: width 0.3s ease;
+}
+
+.nav-menu a:hover::after,
+.nav-menu a.active::after {
+    width: 100%;
+}
+
+.mobile-menu-toggle {
+    display: none;
+    background: none;
+    border: none;
+    font-size: 28px;
+    cursor: pointer;
+}
+
+.nav-links {
+    display: flex;
+}
+
+.nav-links .bar a {
+    display: inline-block;
+}
+
+/* ==================================================
+   TOGGLE BUTTON
+================================================== */
+.menu-toggle {
+    display: none;
+    /* Hidden by default */
+    background: none;
+    border: none;
+    color: #ffffff;
+    font-size: 26px;
+    cursor: pointer;
+}
+
+/* ==================================================
+   DESKTOP ≥1200px
+================================================== */
+@media (min-width: 1200px) {
+    .menu-toggle {
+        display: none;
+    }
+
+    .logo img {
+        margin-left: 20px;
+    }
+
+    .nav-menu {
+        margin-right: 80px;
+    }
+}
+
+/* ==================================================
+   TABLET (768px – 1199px)
+================================================== */
+@media (max-width: 1199px) and (min-width: 768px) {
+
+    .nav-container {
+        height: 72px;
+    }
+
+    .logo img {
+        height: 52px;
+    }
+
+    .menu-toggle {
+        display: none;
+    }
+}
+
+/* ==================================================
+   ANDROID & IPHONE ≤767px
+================================================== */
+@media (max-width: 768px) {
+
+    .nav-container {
+        height: 64px;
+    }
+
+    .logo img {
+        height: 44px;
+        margin-left: 10px;
+    }
+
+    /* Toggle visible */
+    .menu-toggle {
+        display: flex;
+        margin-right: 16px;
+        color: #d4af37;
+    }
+
+    /* Mobile menu */
+    .nav-menu {
+        position: absolute ! important;
+        top: 64px;
+        left: 0;
+        right: 0;
+        background: #fff;
+        padding: 0 16px;
+        max-height: 0;
+        flex-direction: column;
+        gap: 12px;
+        overflow: hidden;
+        transition: max-height 0.4s ease;
+    }
+
+    .nav-menu.open {
+        max-height: 380px;
+    }
+}
+
+/* --- Global & Layout Styles --- */
+:root {
+    --glow-color: rgba(46, 204, 113, 0.6);
+    /* Default glow */
+    --transition-speed: 0.4s;
+}
+
+
+.post-list {
+    max-width: 900px;
+    /* Optimal reading width for Desktop */
+    margin: 0 auto;
+    padding: 20px;
+}
+
+/* --- Centered Blog Post Container --- */
+.blog-post-container {
+    text-align: center;
+    /* Center aligns all text, titles, and meta */
+    background: #ffffff;
+    padding: 40px;
+    margin-bottom: 30px;
+    /* border-radius: 15px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.03); */
+    transition: transform var(--transition-speed);
+}
+
+/* --- Dynamic H1 Styles --- */
+.post-title h1,
+.post-title a {
+    text-decoration: none;
+    font-size: 2rem;
+    font-weight: 800;
+    display: block;
+    margin: 15px 0;
+    transition: color 0.3s ease, transform 0.2s ease;
+}
+
+/* Different colors for every H1 (Cycling every 6 posts) */
+.blog-post-container:nth-of-type(6n+0) .post-title a {
+    color: #15e;
+}
+
+/* Red */
+.blog-post-container:nth-of-type(6n+2) .post-title a {
+    color: #2a9d8f;
+}
+
+/* Teal */
+.blog-post-container:nth-of-type(6n+3) .post-title a {
+    color: #457b9d;
+}
+
+/* Blue */
+.blog-post-container:nth-of-type(6n+4) .post-title a {
+    color: #f4a261;
+}
+
+/* Orange */
+.blog-post-container:nth-of-type(6n+5) .post-title a {
+    color: #9b59b6;
+}
+
+/* Purple */
+.blog-post-container:nth-of-type(6n+6) .post-title a {
+    color: #27ae60;
+}
+
+/* Green */
+
+/* Hover: Color changes to a darker/different shade */
+.post-title a:hover {
+    color: rgb(31, 239, 254) !important;
+    transform: scale(1.02);
+}
+
+/* Click: Instant color change to Black/Grey */
+.post-title a:active {
+    color: #e41cc6 !important;
+}
+
+/* --- Responsive Image Styling --- */
+.blog-post-container img {
+    display: block;
+    margin: 25px auto;
+    /* Centers the image */
+    max-width: 100%;
+    height: auto;
+    border-radius: 12px;
+    cursor: pointer;
+    transition: all 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+.post-content p {
+    display: flex !important;
+    justify-content: center !important;
+    align-items: center !important;
+    font-size: 1.2rem;
+    line-height: 1.5;
+    color: #333;
+    margin: 20px 0;
+}
+
+/* Image Hover & Glow Effect */
+.blog-post-container img:hover {
+    transform: scale(1.03);
+    box-shadow: 0 0 30px 10px var(--glow-color);
+    /* The Glow Effect */
+}
+
+/* --- Pagination UI --- */
+.pagination {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    margin: 40px 0;
+    flex-wrap: wrap;
+}
+
+.pagination a {
+    padding: 10px 18px;
+    border: 1px solid #ddd;
+    text-decoration: none;
+    color: #15e;
+    border-radius: 8px;
+    background: white;
+    transition: 0.3s;
+}
+
+.pagination a.active {
+    background-color: #23e419;
+    color: white;
+    border-color: #2c3e50;
+}
+
+/* Divider */
+.divider {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 40px 0;
+}
+
+.divider::before,
+.divider::after {
+    content: "";
+    flex: 1;
+    height: 1px;
+    background: #777;
+    /* line color */
+}
+
+.divider span {
+    font-size: 18px;
+    color: #999;
+    /* symbol color */
+    margin: 0 12px;
+    letter-spacing: 2px;
+    font-weight: 400;
+}
+
+/* --- Mobile & Tablet Responsive Alignment --- */
+
+/* Tablets (iPad) */
+@media (max-width: 1024px) {
+    .post-list {
+        max-width: 85%;
+    }
+
+    .post-title h1 {
+        font-size: 1.8rem;
+    }
+}
+
+/* Smartphones (Android / iPhone) */
+@media (max-width: 768px) {
+    .blog-post-container {
+        padding: 20px;
+        margin-bottom: 20px;
+        border-radius: 0;
+        /* Full width look on mobile */
+    }
+
+    .blog-post-container img {
+        display: block;
+        margin: 25px auto;
+        /* Centers the image */
+        max-width: 100%;
+        height: auto;
+        border-radius: 12px;
+        cursor: pointer;
+        transition: all 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    }
+
+    .post-title h1 {
+        font-size: 1.5rem;
+    }
+
+    .post-content p {
+        font-size: 1.0rem;
+        line-height: 1.5;
+        color: #333;
+        margin: 20px 0;
+    }
+}
